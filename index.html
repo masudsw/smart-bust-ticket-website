@@ -119,7 +119,7 @@
           <div class="w-[60%]">
             <div class="px-8 py-8 flex justify-between">
               <div>logo</div>
-              <div class="bg-green-300 rounded-lg w-40 text-green-600 text-center h-10 flex justify-center items-center"><span>40 </span> seats left</button></div>
+              <div class="bg-green-300 rounded-lg w-40 text-green-600 text-center h-10 flex justify-center items-center"><span id="seat-left">16</span> seats left</button></div>
             </div>
             <div class="mx-4 bg-slate-50 text-black text-xs">
               <div class="flex justify-between mb-5">
@@ -188,12 +188,12 @@
             <div class="flex justify-between text-center">
               <div class="flex justify-between gap-4">
                 <h1 class="pr-8">A</h1>
-                <div class="bg-slate-200 w-20 ">A1</div>
-                 <div class="bg-slate-200 w-20">A2</div>
+                <div class="bus-seat bg-slate-200 w-20 ">A1</div>
+                 <div class="bus-seat bg-slate-200 w-20">A2</div>
               </div>
               <div class="flex justify-between gap-4">
-                <div class="bg-slate-200 w-20">A3</div>
-                <div class="bg-slate-200 w-20">A4</div>
+                <div class="bus-seat bg-slate-200 w-20">A3</div>
+                <div class="bus-seat bg-slate-200 w-20">A4</div>
               </div>
               
             </div>
@@ -202,12 +202,12 @@
             <div class="flex justify-between text-center my-4">
               <div class="flex justify-between gap-4">
                 <h1 class="pr-8">B</h1>
-                <div class="bg-slate-200 w-20 ">B1</div>
-                 <div class="bg-slate-200 w-20">B2</div>
+                <div class="bus-seat bg-slate-200 w-20 ">B1</div>
+                 <div class="bus-seat bg-slate-200 w-20">B2</div>
               </div>
               <div class="flex justify-between gap-4">
-                <div class="bg-slate-200 w-20">B3</div>
-                <div class="bg-slate-200 w-20">B4</div>
+                <div class="bus-seat bg-slate-200 w-20">B3</div>
+                <div class="bus-seat bg-slate-200 w-20">B4</div>
               </div>
               
             </div>
@@ -216,12 +216,12 @@
             <div class="flex justify-between text-center">
               <div class="flex justify-between gap-4">
                 <h1 class="pr-8">C</h1>
-                <div class="bg-slate-200 w-20 ">C1</div>
-                 <div class="bg-slate-200 w-20">C2</div>
+                <div class="bus-seat bus-seat bg-slate-200 w-20 ">C1</div>
+                 <div class="bus-seat bg-slate-200 w-20">C2</div>
               </div>
               <div class="flex justify-between gap-4">
-                <div class="bg-slate-200 w-20">C3</div>
-                <div class="bg-slate-200 w-20">C4</div>
+                <div class="bus-seat bg-slate-200 w-20">C3</div>
+                <div class="bus-seat bg-slate-200 w-20">C4</div>
               </div>
               
             </div>
@@ -230,12 +230,12 @@
             <div class="flex justify-between text-center my-4">
               <div class="flex justify-between gap-4">
                 <h1 class="pr-8">D</h1>
-                <div class="bg-slate-200 w-20 ">D1</div>
-                 <div class="bg-slate-200 w-20">D2</div>
+                <div class="bus-seat bg-slate-200 w-20 ">D1</div>
+                 <div class="bus-seat bg-slate-200 w-20">D2</div>
               </div>
               <div class="flex justify-between gap-4">
-                <div class="bg-slate-200 w-20">D3</div>
-                <div class="bg-slate-200 w-20">D4</div>
+                <div class="bus-seat bg-slate-200 w-20">D3</div>
+                <div class="bus-seat bg-slate-200 w-20">D4</div>
               </div>
               
             </div>
@@ -250,7 +250,7 @@
           <div class="absolute 0 -ml-0.5 w-0.5 h-[50%] bg-gray-600 border-dotted"></div>
           <h1 class="text-2xl py-8 px-8">Select your seat</h1>
           <div class="bg-slate-200 flex justify-between px-8 mx-4">
-            <h2>seat<span class="indicator-item badge badge-secondary">0</span> </h2>
+            <h2>seat<span id="seat-selected" class="indicator-item badge badge-secondary">0</span> </h2>
             <h2>class</h2>
             <h2>price</h2>
           </div>
@@ -262,24 +262,24 @@
           </div>
           <div class="bg-slate-200 flex justify-between px-8 mx-4 text-bold">
             <h2>Total Price</h2>
-            <h2>BDT <span>1110</span></h2>
+            <h2>BDT <span id="total-price">1110</span></h2>
           </div>
           <!-- form with button for discount coupon -->
           <div class="join px-8 -mx-4 w-[100%] my-4">
             <div>
               <div>
-                <input class="input input-bordered join-item" placeholder="Have any copupon?"/>
+                <input id="input-coupon" class="input input-bordered join-item" placeholder="Have any copupon?"/>
               </div>
             </div>
             
             <div class="indicator">
-              <button class="btn join-item bg-green-300 text-white">Apply</button>
+              <button id="btn-apply"class="btn join-item bg-green-300 text-white">Apply</button>
             </div>
           </div>
           <!-- grand total -->
           <div class="bg-slate-200 flex justify-between px-8 mx-4">
             <h2>Grand Total</h2>
-            <h2>BDT <span>0</span></h2>
+            <h2>BDT <span id="grand-total">0</span></h2>
           </div>
             
            <!-- pasanger information form  -->
@@ -289,21 +289,21 @@
                 <label class="block text-gray-700 text-sm font-bold mb-2" for="PassengerName*">
                   Passenger Name*
                 </label>
-                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Enter your name">
+                <input id="passenger-name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Enter your name">
 
                 <label class="block text-gray-700 text-sm font-bold mb-2" for="PassengerName*">
                   Phone Number*
                 </label>
-                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Enter your phone number">
+                <input id="phone-number" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Enter your phone number">
 
                 <label class="block text-gray-700 text-sm font-bold mb-2" for="PassengerName*">
                   Email ID
                 </label>
-                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Enter your Email ID">
+                <input id="email-id" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Enter your Email ID">
               </div>
               
               <div class="flex items-center justify-between">
-                <button class="bg-green-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
+                <button id="btn-next" class="bg-green-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
                   Next
                 </button>
                 
@@ -340,5 +340,6 @@
         </div>
       </div>
     </footer>
+    <script src="js/script.js"></script>
 </body>
 </html>
