@@ -66,14 +66,32 @@ for(let seat of seats)
         const parent=inputCoupon.parentNode.parentNode.parentNode;
         parent.classList.add('invisible');
         flag=false;
-        // this.parentNode.parentNode.style.display='none'
         return;
       }
-      else if(inputCoupon==='Couple 20'){
-        alert('20%');
+      else if(inputCoupon.value==='Couple 20'){
+        if(totalPrice===0){
+            alert('You did not buy any ticket. Please buy ticket and then use your coupon');
+            return;
+           }
+           totalPrice=totalPrice-totalPrice*0.2;
+           document.getElementById('grand-total').innerText=totalPrice;
+           const parent=inputCoupon.parentNode.parentNode.parentNode;
+           parent.classList.add('invisible');
+           flag=false;
+           return;
       }
       else{
         alert('Wrong coupon info');
       }
 
+ })
+
+
+
+ document.getElementById('btn-next').addEventListener('click',function(){
+    if(parseInt(document.getElementById('total-price').innerText)===0){
+        alert('Buy ticket please !!');
+        return;
+    }
+     alert('congratulations!!')
  })
