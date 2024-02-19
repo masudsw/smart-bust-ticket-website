@@ -113,10 +113,22 @@ const btnNext=document.getElementById('btn-next');
     //  for(let section of sections)
     //    section.classList.remove('hidden');
     // document.getElementById('process').classList.add('hidden');
+    
+    document.getElementById('phone-number').value="";
+    document.getElementById('passenger-name').value="";
     location.reload();
 
  })
 
- document.getElementById('phone-number').addEventListener('keyup',function(){
-  btnNext.disabled=false;
+ document.getElementById('phone-number').addEventListener('keyup',function(e){
+  let phoneNumber=document.getElementById('phone-number').value;
+  if (isNaN(phoneNumber)){
+    btnNext.disabled=true;
+    return;
+  }
+  else
+  {
+      btnNext.disabled=false;
+  }
+
  })
