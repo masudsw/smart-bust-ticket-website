@@ -7,6 +7,15 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- google font link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>
+      *{
+        font-family: "Raleway", sans-serif;
+       }
+    </style>
 </head>
 <body>
     <section class="w-[90%] mx-auto">
@@ -58,7 +67,7 @@
     <section class="w-[90%] mx-auto my-8 ">
         <h1 class="text-4xl text-bold-2xl text-center gap-4">Best offer of you</h1>
         <div class="lg:flex sm:flex-col lg:flex-row  my-8 gap-4 ">
-            <div class="lg:w-1/2 bg-[#FFBF0F] text-primary-content rounded-xl flex sm:my-4">
+            <div class="lg:w-1/2 bg-[#FFBF0F] text-primary-content rounded-xl flex">
               <div class="w-[60%] flex items-center justify-center">
                 <div class="text-black p-10">
                   <h2 class="card-title text-center">15% OFF</h2>
@@ -80,7 +89,7 @@
               </div>
               </div>
 
-              <div class="lg:w-1/2 bg-[#F78C9C] text-primary-content rounded-xl flex sm:my-4">
+              <div class="lg:w-1/2 bg-[#F78C9C] text-primary-content rounded-xl flex">
                 <div class="w-[60%] flex items-center justify-center">
                   <div class="text-black p-10">
                     <h2 class="card-title text-center">20% OFF</h2>
@@ -115,11 +124,20 @@
         </div>
       </div>
       
-      <div class="w-[80%] h-80 my-8 text-primary-content rounded-xl flex sm:my-4 bg-base-100 mx-auto">
-          <div class="w-[60%]">
+      <div class="w=[100%] lg:w-[80%] h-80 my-8 text-primary-content rounded-xl flex sm:my-4 bg-base-100 mx-auto">
+          <div class="w-[100%] lg:w-[60%]">
             <div class="px-8 py-8 flex justify-between">
-              <div>logo</div>
-              <div class="bg-green-300 rounded-lg w-40 text-green-600 text-center h-10 flex justify-center items-center"><span id="seat-left">16</span> seats left</button></div>
+              <div class="flex">
+                <div>
+                  <img src="images/bus-logo.png" alt="">
+                </div>
+                <div class="pl-1">
+                  <h1 class="text-black lg:text-xl">GreenLine Poribahan</h1>
+                  <p class="text-slate-500 text-xs lg:text-sm ">Coach-009-WEB ! AC_Business</p>
+                </div>
+
+              </div>
+              <div class="bg-green-300 rounded-lg w-40 text-green-600 text-center h-10 flex justify-center items-center text-[0.75rem] lg:text-base"><span class="px-2" id="seat-left">16</span> seats left</button></div>
             </div>
             <div class="mx-4 bg-slate-50 text-black text-xs">
               <div class="flex justify-between mb-5">
@@ -166,8 +184,8 @@
           </div>
       </div>
 
-      <div class="gap-4 lg:flex bg-white w-[80%] mx-auto">
-        <div class="w-[60%] p-8">
+      <div class="gap-4 lg:flex bg-white w-[100%] lg:w-[80%] mx-auto">
+        <div class="w-[100%]  lg:w-[60%] p-8">
           <h1 class="text-2xl pb-8">Select your seat</h1>
           <div class="flex justify-between pb-8">
             <div class="flex">
@@ -253,8 +271,8 @@
           </div>
         </div>
         
-        <div class="w-[40%] reative">
-          <div class="absolute 0 -ml-0.5 w-0.5 h-[50%] bg-gray-600 border-dotted"></div>
+        <div class="w-[100%] lg:w-[40%] reative">
+          <div class="absolute 0 -ml-0.5 w-0.5 h-[85%] bg-gray-600 "></div>
           <h1 class="text-2xl py-8 px-8">Select your seat</h1>
           <div class="bg-slate-200 flex justify-between px-8 mx-4">
             <h2>seat<span id="seat-selected" class="indicator-item badge bg-green-600 text-white">0</span> </h2>
@@ -287,18 +305,19 @@
           </div>
             
            <!-- pasanger information form  -->
-           <div class="w-full max-w-xs">
+           <!-- <div class="w-full max-w-xs"> -->
+            <div class="w-full lg:w-[90%]">
             <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
               <div class="mb-4">
                 <label class="block text-gray-700 text-sm font-bold mb-2" for="PassengerName*">
                   Passenger Name*
                 </label>
-                <input id="passenger-name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Enter your name">
+                <input id="passenger-name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Enter your name" required>
 
                 <label class="block text-gray-700 text-sm font-bold mb-2" for="PassengerName*">
                   Phone Number*
                 </label>
-                <input id="phone-number" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="text" placeholder="Enter your phone number">
+                <input id="phone-number" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="username" type="phone" placeholder="Enter your phone number" required>
 
                 <label class="block text-gray-700 text-sm font-bold mb-2" for="PassengerName*">
                   Email ID
@@ -320,10 +339,12 @@
         </div>
       </div>
     </section>
-    <section class="bg-black text-white p-10">
-      <div class="flex justify-between">
+
+    <!-- footer section -->
+    <section class="bg-slate-800 text-white p-10">
+      <div class="lg:flex justify-between">
         <div>
-          <h3>p-ticket</h3>
+          <h3 class="text-2xl">P-ticket</h3>
           <p>P-Ticket is a digital platform to make your <br>  daily commuting better.</p>
           
         </div>
@@ -333,8 +354,8 @@
         </div>
       </div>
       <hr>
-      <div class="flex justify-between py-8">
-        <div>
+      <div class="lg:flex justify-between py-8">
+        <div class="py-8">
           <p>@all rights reserved, P-Ticket services limited.2024</p>
         </div>
         <div class="flex justify-between">
