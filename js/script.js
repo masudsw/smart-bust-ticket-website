@@ -87,12 +87,21 @@ for(let seat of seats)
  })
 
 
-
- document.getElementById('btn-next').addEventListener('click',function(){
+const btnNext=document.getElementById('btn-next');
+ btnNext.addEventListener('click',function(){
     if(parseInt(document.getElementById('total-price').innerText)===0){
         alert('Buy ticket please !!');
         return;
     }
+    const name=document.getElementById('passenger-name').value;
+    const phone=document.getElementById('phone-number').value;
+    if(name.length==0 || phone.length==0){
+      alert('Name and phone is required');
+      btnNext.disabled=true;
+      return;
+    }
+    
+    
      const sections=document.getElementsByTagName('section');
      for(let section of sections)
        section.classList.add('hidden');
@@ -106,4 +115,8 @@ for(let seat of seats)
     // document.getElementById('process').classList.add('hidden');
     location.reload();
 
+ })
+
+ document.getElementById('phone-number').addEventListener('keyup',function(){
+  btnNext.disabled=false;
  })
