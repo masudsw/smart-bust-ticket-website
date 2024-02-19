@@ -93,5 +93,17 @@ for(let seat of seats)
         alert('Buy ticket please !!');
         return;
     }
-     alert('congratulations!!')
+     const sections=document.getElementsByTagName('section');
+     for(let section of sections)
+       section.classList.add('hidden');
+    document.getElementById('process').classList.remove('hidden');
+ })
+
+ document.getElementById('btn-continue').addEventListener('click',function(){
+    // const sections=document.getElementsByTagName('section');
+    //  for(let section of sections)
+    //    section.classList.remove('hidden');
+    // document.getElementById('process').classList.add('hidden');
+    location.reload();
+
  })
