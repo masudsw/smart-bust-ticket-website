@@ -1,11 +1,24 @@
 const seats=document.getElementsByClassName('bus-seat');
+let flag=true;
+let count=0;
 for(let seat of seats)
  {
+    
     seat.addEventListener('click',function(){
+        if(flag===false){
+            alert('Please proceed to payment...');
+            return;
+        }
+        count++;
         if(seat.classList.contains('bg-green-500'))
         {
             alert('You have already selected the seat. Please select other seat..');
             return;
+        }
+        if(count>4){
+            alert('Sorry , you can not buy more than 4 seats at a time!!');
+            return;
+    
         }
         seat.classList.remove('bg-slate-200');
         seat.classList.add('bg-green-500');
@@ -31,7 +44,36 @@ for(let seat of seats)
         `;
         seatInfo.innerHTML+=html;
 
-
+        let totalPrice=document.getElementById('total-price');
+        convertedTotalPrice=parseInt(totalPrice.innerText);
+        totalPrice.innerText=convertedTotalPrice+550;
+        document.getElementById('grand-total').innerText=totalPrice.innerText;
 
     })
  }
+
+
+ document.getElementById('btn-apply').addEventListener('click',function(){
+      const inputCoupon=document.getElementById('input-coupon');
+      let totalPrice=parseInt(document.getElementById('total-price').innerText);
+      if(inputCoupon.value==='NEW15'){
+        if(totalPrice===0){
+         alert('You did not buy any ticket. Please buy ticket and then use your coupon');
+         return;
+        }
+        totalPrice=totalPrice-totalPrice*0.15;
+        document.getElementById('grand-total').innerText=totalPrice;
+        const parent=inputCoupon.parentNode.parentNode.parentNode;
+        parent.classList.add('invisible');
+        flag=false;
+        // this.parentNode.parentNode.style.display='none'
+        return;
+      }
+      else if(inputCoupon==='Couple 20'){
+        alert('20%');
+      }
+      else{
+        alert('Wrong coupon info');
+      }
+
+ })
